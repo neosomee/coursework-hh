@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "save vacations from hh-ru"
+version = "0.1.0"
+description = ""
+authors = ["DiannaaaMm <murlaevadiana@gmail.com >"]
+readme = "README.md"
+packages = [{include = "save vacations from hh"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+setuptools = "^69.5.1"
+pandas = "^2.2.2"
+openpyxl = "^3.1.2"
+types-requests = "^2.32.0.20240914"
+requests = "^2.32.3"
+psycopg2 = "^2.9.10"
+
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.3.0"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+mypy = "^1.9.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-cov = "^5.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_return_any = true
+exclude = 'venv'
+
+[tool.isort]
+line_length = 120
+profile = "black"
+multi_line_output = 3
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+)
+)
+'''
